@@ -1,0 +1,17 @@
+[project]
+name = "hexlet-code"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.1.4",
+]
+
+[dependency-groups]
+dev = [
+    "django-extensions>=3.2.3",
+    "ipython>=8.31.0",
+    "python-dotenv>=1.0.1",
+    "ruff>=0.8.6",
+]
