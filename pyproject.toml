@@ -9,6 +9,7 @@ dependencies = [
     "django>=5.1.4",
     "gunicorn>=23.0.0",
     "psycopg2-binary>=2.9.10",
+    "uv>=0.5.15",
     "uvicorn>=0.34.0",
     "whitenoise[brotli]>=6.8.2",
 ]
