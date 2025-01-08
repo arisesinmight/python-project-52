@@ -2,6 +2,8 @@
 # Exit on error
 set -o errexit
 
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 uv pip install -r requirements.txt
 
