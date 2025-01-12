@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load i18n %}
+
+<h1 class="my-4">{% trans 'Sign up' %}</h1>
+
+<form action="{% url 'user_create' %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="mb-3">
+            {{ field.label_tag }}
+            <br>
+            {{ field }}
+            {% if field.help_text %}
+                {{ field.help_text }}
+            {% endif %}
+        </div>
+    {% endfor %}
+    <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}">
+</form>
+
+{% endblock %}

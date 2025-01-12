@@ -1,7 +1,8 @@
-from django.forms import ModelForm
-from task_manager.models import User
+from django.contrib.auth.forms import UserCreationForm
+from task_manager.users.models import User
 
-class UserRegForm(ModelForm):
+class SignUpForm(UserCreationForm):
+
     class Meta:
         model = User
-        fields = ['name', 'last_name', 'nickname', 'password']
+        fields = ['first_name', 'last_name', 'username', 'password']

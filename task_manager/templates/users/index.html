@@ -24,9 +24,9 @@
         <td>{{ user.name }} {{user.last_name }}</td>
         <td>{{ user.created_at }}</td>
         <td>
-          <a href="/users/1/update/">Изменить</a>
+          <a href="{% url 'user_update' pk=user.id %}">Изменить</a>
           <br>
-          <a href="/users/1/delete/">Удалить</a>
+          <a href="{% url 'user_delete' pk=user.id %}">Удалить</a>
         </td>
       </tr>
     {% endfor %}
