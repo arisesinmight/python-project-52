@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 00:24+0300\n"
+"POT-Creation-Date: 2025-01-12 22:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,7 @@ msgid "Sign in"
 msgstr "Войти"
 
 #: task_manager/templates/base.html:29
+#: task_manager/templates/users/create.html:7
 msgid "Sign up"
 msgstr "Регистрация"
 
@@ -44,3 +45,41 @@ msgstr "Перед тобой менеджер задач, реализован�
 #: task_manager/templates/greetings.html:11
 msgid "Developers link"
 msgstr "Страница разработчика"
+
+#: task_manager/templates/users/create.html:12
+msgid "Submit"
+msgstr "Подтвердить"
+
+#: task_manager/users/forms.py:8 task_manager/users/forms.py:9
+msgid "First_name"
+msgstr "Имя"
+
+#: task_manager/users/forms.py:12 task_manager/users/forms.py:13
+msgid "Last_name"
+msgstr "Фамилия"
+
+#: task_manager/users/forms.py:16 task_manager/users/forms.py:17
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/users/forms.py:19
+msgid ""
+"Required field. No more than 150 characters. Only letters, numbers and "
+"symbols @/./+/-/_."
+msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_."
+
+#: task_manager/users/forms.py:23 task_manager/users/forms.py:24
+msgid "Password"
+msgstr "Пароль"
+
+#: task_manager/users/forms.py:26
+msgid "Your password should be at least 3 symbols long."
+msgstr "Ваш пароль должен содержать как минимум 3 символа."
+
+#: task_manager/users/forms.py:30 task_manager/users/forms.py:31
+msgid "Submit password"
+msgstr "Подтверждение пароля"
+
+#: task_manager/users/forms.py:33
+msgid "Please enter your password again to confirm."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."

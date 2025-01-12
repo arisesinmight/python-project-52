@@ -12,6 +12,7 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "uvicorn>=0.34.0",
     "whitenoise[brotli]>=6.8.2",
+    "crispy-bootstrap5>=2024.10",
 ]
 
 [dependency-groups]

@@ -14,3 +14,9 @@ migrations:
 
 migrate:
 	uv run python manage.py migrate
+
+trans:
+	uv run django-admin makemessages -l ru_RU
+
+comp:
+	uv run django-admin compilemessages

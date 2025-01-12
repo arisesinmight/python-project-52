@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'task_manager',
     'task_manager.users',
+    "crispy_forms",
+    "crispy_bootstrap5"
 
 ]
 
@@ -82,6 +84,9 @@ TEMPLATES = [
         },
     },
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 WSGI_APPLICATION = 'task_manager.wsgi.application'
 
