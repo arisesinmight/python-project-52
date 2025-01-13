@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-12 22:27+0300\n"
+"POT-Creation-Date: 2025-01-14 00:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,13 +26,30 @@ msgid "Folks"
 msgstr "Пользователи"
 
 #: task_manager/templates/base.html:26
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/base.html:29
+msgid "Labels"
+msgstr "Метки"
+
+#: task_manager/templates/base.html:32
+msgid "Tasks"
+msgstr "Задачи"
+
+#: task_manager/templates/base.html:36
+#: task_manager/templates/registration/login.html:7
 msgid "Sign in"
 msgstr "Войти"
 
-#: task_manager/templates/base.html:29
+#: task_manager/templates/base.html:39
 #: task_manager/templates/users/create.html:7
 msgid "Sign up"
 msgstr "Регистрация"
+
+#: task_manager/templates/base.html:47
+msgid "Exit"
+msgstr "Выход"
 
 #: task_manager/templates/greetings.html:8
 msgid "Greetings, traveller"
@@ -46,9 +63,40 @@ msgstr "Перед тобой менеджер задач, реализован�
 msgid "Developers link"
 msgstr "Страница разработчика"
 
+#: task_manager/templates/registration/logged_out.html:6
+msgid "Logged out"
+msgstr "Вы вышли"
+
+#: task_manager/templates/registration/logged_out.html:8
+msgid "Click here to login again."
+msgstr "Нажмите сюда, чтобы вновь войти"
+
+#: task_manager/templates/registration/login.html:12
+msgid "Enter"
+msgstr "Вход"
+
 #: task_manager/templates/users/create.html:12
+#: task_manager/templates/users/update.html:12
 msgid "Submit"
 msgstr "Подтвердить"
+
+#: task_manager/templates/users/delete.html:7
+#, fuzzy
+#| msgid "Edit user"
+msgid "Delete user"
+msgstr "Изменение пользователя"
+
+#: task_manager/templates/users/delete.html:8
+msgid "Are you sure you want to delete profile"
+msgstr "Вы уверены что хотите удалить профиль"
+
+#: task_manager/templates/users/delete.html:12
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: task_manager/templates/users/update.html:7
+msgid "Edit user"
+msgstr "Изменение пользователя"
 
 #: task_manager/users/forms.py:8 task_manager/users/forms.py:9
 msgid "First_name"
@@ -66,7 +114,9 @@ msgstr "Имя пользователя"
 msgid ""
 "Required field. No more than 150 characters. Only letters, numbers and "
 "symbols @/./+/-/_."
-msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_."
+msgstr ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
 
 #: task_manager/users/forms.py:23 task_manager/users/forms.py:24
 msgid "Password"

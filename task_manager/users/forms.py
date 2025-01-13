@@ -3,7 +3,7 @@ from task_manager.users.models import User
 from django import forms
 from django.utils.translation import gettext as _
 
-class SignUpForm(UserCreationForm):
+class UserForm(UserCreationForm):
     first_name = forms.CharField(
         label=_('First_name'),
         widget=forms.TextInput(attrs={'placeholder': _('First_name')})
@@ -33,7 +33,6 @@ class SignUpForm(UserCreationForm):
             'Please enter your password again to confirm.'
         )
     )
-
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username']

@@ -18,23 +18,43 @@
           <li class="nav-item">
             <a class="nav-link" href="/users/">{% trans 'Folks' %}</a>
           </li>
-
         </ul>
-        <ul class="navbar-nav">
 
+        <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/statuses/">{% trans 'Statuses' %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/labels/">{% trans 'Labels' %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tasks/">{% trans 'Tasks' %}</a>
+            </li>
+        {% else %}
             <li class="nav-item">
               <a class="nav-link" href="/login/">{% trans 'Sign in' %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/users/create/">{% trans 'Sign up' %}</a>
             </li>
-
+        {% endif %}
         </ul>
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav">
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input class="btn nav-link" type="submit" value="{% trans 'Exit' %}">
+          </form>
+        </ul>
+        {% endif %}
       </div>
     </nav>
+
     <div class="container wrapper flex-grow-1">
         {% block content %}{% endblock %}
     </div>
+
     <footer>
       <div class="container my-5 pt-4 border-top">
         <a target="_blank" href="https://t.me/arisesinmight">tg: @arisesinmight</a>
