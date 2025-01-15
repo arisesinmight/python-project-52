@@ -27,6 +27,3 @@ urlpatterns = [
     path('logout/', TMLogoutView.as_view(), name='logout'),
 
 ]
-
-
-#path('', include('django.contrib.auth.urls')),

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-15 09:15+0300\n"
+"POT-Creation-Date: 2025-01-15 13:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -126,14 +126,18 @@ msgstr "Подтверждение пароля"
 msgid "Please enter your password again to confirm."
 msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
-#: task_manager/users/mixins.py:7
+#: task_manager/users/mixins.py:8
 msgid "Please authorize to proceed!"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/views.py:15
+#: task_manager/users/mixins.py:17
+msgid "You don't have access to edit other users profile."
+msgstr "У вас нет прав для изменения профиля другого пользователя."
+
+#: task_manager/views.py:16
 msgid "You are logged out"
 msgstr "Вы разлогинены"
 
-#: task_manager/views.py:19
+#: task_manager/views.py:21
 msgid "You are logged in"
 msgstr "Вы залогинены"

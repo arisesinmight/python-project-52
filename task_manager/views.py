@@ -2,7 +2,7 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth.views import LogoutView, LoginView
 from django.utils.translation import gettext as _
 from django.contrib.messages.views import SuccessMessageMixin
-from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 
@@ -12,9 +12,11 @@ class HelloView(TemplateView):
 
 
 class TMLogoutView(SuccessMessageMixin, LogoutView):
-    success_message = _('You are logged out')
-    success_url = reverse_lazy('greeting')
+    def dispatch(self, request, *args, **kwargs):
+        messages.info(request, _("You are logged out"))
+        return super().dispatch(request, *args, **kwargs)
+
 
 class TMLoginView(SuccessMessageMixin, LoginView):
     success_message = _('You are logged in')
-    success_url = reverse_lazy('greeting')
+
