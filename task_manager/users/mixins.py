@@ -13,16 +13,29 @@ class LoginRequired(LoginRequiredMixin):
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
 
+    def handle_no_permission(self):
+        return redirect('login')
+
+
 class CheckUserMixin(UserPassesTestMixin):
     def test_func(self):
         if self.request.user == self.get_object():
             return True
         else:
-            messages.error(self.request, _("You don't have access to edit other users profile."))
+            messages.warning(self.request, _("You don't have access to edit other users profile."))
             return False
 
-    def handle_no_permission(self):
-        return redirect('users_index')
+    def dispatch(self, request, *args, **kwargs):
+        user_test_result = self.get_test_func()()
+        if not user_test_result:
+            return redirect('users_index')
+        return super(UserPassesTestMixin, self).dispatch(request, *args, **kwargs)
+
+
+
+
+
+
 
 
 

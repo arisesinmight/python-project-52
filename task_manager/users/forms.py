@@ -36,3 +36,19 @@ class UserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username']
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['password1'].required = False
+            self.fields['password2'].required = False
+            self.fields['password1'].widget.attrs['autocomplete'] = 'off'
+            self.fields['password2'].widget.attrs['autocomplete'] = 'off'
+
+        def save(self, commit=True):
+            user = super().save(commit=False)
+            password1 = self.cleaned_data.get('password1')
+            if password1:
+                user.set_password(password1)
+            if commit:
+                user.save()
+            return user
