@@ -42,6 +42,12 @@ class DeleteUserTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'users/delete.html')
 
+    def test_user_deleted(self):
+        self.client.login(username='avavav', password='av13')
+        self.client.post(reverse('user_delete', kwargs={'pk': 1}))
+
+        self.assertFalse(User.objects.filter(pk=1))
+
 
 
 

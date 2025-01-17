@@ -27,23 +27,36 @@ class UpdateUserTest(TestCase):
         self.assertRedirects(resp, '/login/')
 
     def test_permission_denied(self):
-        login = self.client.login(username='avavav', password='av13')
+        self.client.login(username='avavav', password='av13')
         resp = self.client.get(reverse('user_update', kwargs={'pk': 2}))
 
         self.assertRedirects(resp, '/users/')
 
     def test_logged_in_uses_correct_template(self):
-        login = self.client.login(username='avavav', password='av13')
+        self.client.login(username='avavav', password='av13')
         resp = self.client.get(reverse('user_update', kwargs={'pk': 1}))
 
         self.assertEqual(str(resp.context['user']), 'Leha Bulankov')
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'users/update.html')
 
-    '''def test_user_updated(self):
-        login = self.client.login(username='avavav', password='av13')
-        resp_get = self.client.get(reverse('user_update', kwargs={'pk': 1}))
-        resp_post'''
+    def test_user_updated(self):
+        self.client.login(username='avavav', password='av13')
+        self.client.post(
+            reverse('user_update', kwargs={'pk': 1}),
+            {'first_name': 'Leha',
+             'last_name': 'loh',
+             'username': 'avavav1',
+             'password1': 'av13',
+             'password2': 'av13'
+             })
+        test_user = User.objects.get(id=1)
+        new_data = test_user.last_name
+
+        self.assertEqual(new_data, 'loh')
+
+
+
 
 
 

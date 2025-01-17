@@ -6,18 +6,21 @@ from task_manager.users.views import UserCreateView
 
 class CreateUserTest(TestCase):
 
-    def setUp(self):
-        test_user = User.objects.create_user(
-            first_name='Leha',
-            last_name="Bulankov",
-            username='avavav',
-            password='av13')
-        test_user.save()
-
-
     def test_correct_template(self):
         resp = self.client.get(reverse('user_create'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'users/create.html')
 
+    def test_create_user(self):
+        self.client.post(
+            reverse('user_create'),
+            {'first_name': 'Leha',
+             'last_name': 'Bulankov',
+             'username': 'avavav',
+             'password1': 'av13',
+             'password2': 'av13'
+             })
+        test_user = User.objects.get(id=1)
+
+        self.assertTrue(test_user)
