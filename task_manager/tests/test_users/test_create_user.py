@@ -10,7 +10,7 @@ class CreateUserTest(TestCase):
         resp = self.client.get(reverse('user_create'))
 
         self.assertEqual(resp.status_code, 200)
-        self.assertTemplateUsed(resp, 'users/create.html')
+        self.assertTemplateUsed(resp, 'users/user_create.html')
 
     def test_create_user(self):
         self.client.post(

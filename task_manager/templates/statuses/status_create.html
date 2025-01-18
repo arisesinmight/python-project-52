@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<h1 class="my-4">{% trans 'Create status' %}</h1>
+
+<form action="{% url 'status_create' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="btn btn-primary" type="submit" value="{% trans 'Create' %}">
+</form>
+
+{% endblock %}

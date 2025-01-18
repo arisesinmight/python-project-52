@@ -1,7 +1,6 @@
 from django.test import TestCase
 from task_manager.users.models import User
 from django.urls import reverse
-from task_manager.users.views import UserDeleteView
 
 
 class DeleteUserTest(TestCase):
@@ -40,7 +39,7 @@ class DeleteUserTest(TestCase):
 
         self.assertEqual(str(resp.context['user']), 'Leha Bulankov')
         self.assertEqual(resp.status_code, 200)
-        self.assertTemplateUsed(resp, 'users/delete.html')
+        self.assertTemplateUsed(resp, 'users/user_delete.html')
 
     def test_user_deleted(self):
         self.client.login(username='avavav', password='av13')

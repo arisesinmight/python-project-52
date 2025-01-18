@@ -38,7 +38,7 @@ class UpdateUserTest(TestCase):
 
         self.assertEqual(str(resp.context['user']), 'Leha Bulankov')
         self.assertEqual(resp.status_code, 200)
-        self.assertTemplateUsed(resp, 'users/update.html')
+        self.assertTemplateUsed(resp, 'users/user_update.html')
 
     def test_user_updated(self):
         self.client.login(username='avavav', password='av13')
