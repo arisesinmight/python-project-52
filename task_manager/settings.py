@@ -46,11 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    "crispy_forms",
+    "crispy_bootstrap5",
     'task_manager',
     'task_manager.users',
     'task_manager.statuses',
-    "crispy_forms",
-    "crispy_bootstrap5",
+    'task_manager.tasks',
 ]
 
 MIDDLEWARE = [
@@ -94,19 +95,19 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600
     )
-}
-'''DATABASES = {
+}'''
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}'''
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

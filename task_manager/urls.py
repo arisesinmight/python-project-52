@@ -22,8 +22,9 @@ from task_manager.views import TMLogoutView, TMLoginView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HelloView.as_view(), name='greeting'),
-    path('users/', include('task_manager.users.urls')),
-    path('statuses/', include('task_manager.statuses.urls')),
     path('login/', TMLoginView.as_view(), name='login'),
     path('logout/', TMLogoutView.as_view(), name='logout'),
+    path('users/', include('task_manager.users.urls')),
+    path('statuses/', include('task_manager.statuses.urls')),
+    path('tasks/', include('task_manager.tasks.urls')),
 ]

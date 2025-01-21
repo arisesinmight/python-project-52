@@ -9,7 +9,7 @@
 <form action="{% url 'user_create' %}" method="post">
     {% csrf_token %}
     {{ form|crispy }}
-    <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}">
+    <input class="btn btn-primary" type="submit" value="{% trans 'Sign Up' %}">
 </form>
 
 {% endblock %}

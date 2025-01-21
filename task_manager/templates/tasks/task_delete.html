@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load i18n %}
+
+
+<h1 class="my-4">{% trans 'Delete task' %}</h1>
+<p>{% trans 'Are you sure you want to delete task' %}: {{ task.name }}?</p>
+
+<form action="{% url 'task_delete' pk=task.id %}" method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="{% trans 'Yes, delete' %}">
+</form>
+
+{% endblock %}

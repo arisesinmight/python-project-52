@@ -2,10 +2,9 @@ from django.shortcuts import redirect
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
 
-class CheckUserMixin(UserPassesTestMixin):
+class CheckAuthorMixin(UserPassesTestMixin):
     def test_func(self):
-
-        if self.request.user == self.get_object():
+        if self.request.user == self.get_object().author:
             return True
         else:
             messages.warning(self.request, self.permission_denied_message)

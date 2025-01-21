@@ -1,9 +1,10 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from task_manager.users.models import User
 from django import forms
 from django.utils.translation import gettext as _
+from django.forms import ModelForm
 
-class UserForm(UserCreationForm):
+class UserForm(ModelForm):
     first_name = forms.CharField(
         label=_('First_name'),
         widget=forms.TextInput(attrs={'placeholder': _('First_name')})
@@ -33,6 +34,16 @@ class UserForm(UserCreationForm):
             'Please enter your password again to confirm.'
         )
     )
+
+class UserCreateForm(UserForm, UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username']
+
+class UserUpdateForm(UserForm, UserChangeForm):
+    password = None
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username']
+

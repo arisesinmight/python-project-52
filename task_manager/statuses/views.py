@@ -1,5 +1,5 @@
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from task_manager.statuses.models import Status
 from django.views.generic import CreateView, UpdateView, DeleteView
 from task_manager.statuses.forms import StatusForm
@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.mixins import LoginRequired
+from django.contrib import messages
 
 
 class StatusesIndexView(LoginRequired, View):
@@ -35,3 +36,11 @@ class StatusDeleteView(LoginRequired, SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('statuses_index')
     template_name = 'statuses/status_delete.html'
     success_message = _('Status successfully removed')
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.on_task.exists():
+            messages.warning(self.request, _("Unable to delete status that's in use."))
+            return redirect('statuses_index')
+        return self.delete(request, *args, **kwargs)
+
