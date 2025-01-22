@@ -1,7 +1,7 @@
 from django.views import View
 from django.shortcuts import render
 from task_manager.tasks.models import Task
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from task_manager.tasks.forms import TaskForm
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
@@ -14,6 +14,12 @@ class TasksIndexView(LoginRequired, View):
     def get(self, request, *args, **kwargs):
         tasks = Task.objects.all()
         return render(request, 'tasks/tasks_index.html', context={'tasks': tasks})
+
+
+class TaskView(LoginRequired, DetailView):
+    model = Task
+    template_name = 'tasks/task_details.html'
+    context_object_name = 'task'
 
 
 class TaskCreateView(LoginRequired, SuccessMessageMixin, CreateView):

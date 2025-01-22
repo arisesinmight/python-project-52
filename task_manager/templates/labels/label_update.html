@@ -4,9 +4,9 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-<h1 class="my-4">{% trans 'Edit status' %}</h1>
+<h1 class="my-4">{% trans 'Edit label' %}</h1>
 
-<form action="{% url 'status_update' pk=status.id %}" method="post">
+<form action="{% url 'label_update' pk=label.id %}" method="post">
     {% csrf_token %}
     {{ form|crispy }}
     <input class="btn btn-primary" type="submit" value="{% trans 'Edit' %}">

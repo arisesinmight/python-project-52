@@ -39,7 +39,7 @@ class DeleteTaskTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'tasks/task_delete.html')
 
-    def test_status_deleted(self):
+    def test_task_deleted(self):
         self.client.login(username='avavav', password='av13')
         self.client.post(reverse('task_delete', kwargs={'pk': 1}))
 

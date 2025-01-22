@@ -19,7 +19,7 @@ class TaskForm(ModelForm):
         queryset=Status.objects.all()
     )
     executor = forms.ModelChoiceField(
-        label=_('Executioner'),
+        label=_('Executor'),
         queryset=User.objects.filter(is_superuser=False)
     )
     labels = forms.CharField(  #MultipleChoiceField(choises=(https://metanit.com/python/django/4.2.php)

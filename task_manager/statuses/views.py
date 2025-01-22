@@ -31,16 +31,16 @@ class StatusUpdateView(LoginRequired, SuccessMessageMixin, UpdateView):
     success_message = _('Status successfully updated')
 
 
-class StatusDeleteView(LoginRequired, SuccessMessageMixin, DeleteView):
+class StatusDeleteView(LoginRequired, DeleteView):
     model = Status
     success_url = reverse_lazy('statuses_index')
     template_name = 'statuses/status_delete.html'
-    success_message = _('Status successfully removed')
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.on_task.exists():
             messages.warning(self.request, _("Unable to delete status that's in use."))
             return redirect('statuses_index')
+        messages.success(self.request, _('Status successfully removed'))
         return self.delete(request, *args, **kwargs)
 
