@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 from task_manager.tasks.models import Task
+from task_manager.labels.models import Label
 from task_manager.statuses.models import Status
 from task_manager.users.models import User
 from django.utils.translation import gettext as _
@@ -22,10 +23,10 @@ class TaskForm(ModelForm):
         label=_('Executor'),
         queryset=User.objects.filter(is_superuser=False)
     )
-    labels = forms.CharField(  #MultipleChoiceField(choises=(https://metanit.com/python/django/4.2.php)
+    labels = forms.ModelMultipleChoiceField(
         label=_('Labels'),
-        required=False,
-        widget=forms.TextInput(attrs={'placeholder': _('Labels')})
+        queryset=Label.objects.all(),
+        required=False
     )
     class Meta:
         model = Task

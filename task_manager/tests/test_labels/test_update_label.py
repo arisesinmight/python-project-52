@@ -19,7 +19,6 @@ class UpdateStatusTest(TestCase):
         test_user.save()
 
 
-
     def test_redirect_if_not_logged_in(self):
         resp = self.client.get(reverse('label_update', kwargs={'pk': 1}))
         self.assertRedirects(resp, '/login/')
