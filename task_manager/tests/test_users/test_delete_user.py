@@ -26,7 +26,7 @@ class DeleteUserTest(TestCase):
         self.assertRedirects(resp, '/login/')
 
     def test_permission_denied(self):
-        login = self.client.login(username='avavav', password='av13')
+        self.client.login(username='avavav', password='av13')
         resp = self.client.get(reverse('user_delete', kwargs={'pk': 2}))
 
         self.assertEqual(resp.status_code, 302)
@@ -34,7 +34,7 @@ class DeleteUserTest(TestCase):
 
 
     def test_logged_in_uses_correct_template(self):
-        login = self.client.login(username='avavav', password='av13')
+        self.client.login(username='avavav', password='av13')
         resp = self.client.get(reverse('user_delete', kwargs={'pk': 1}))
 
         self.assertEqual(str(resp.context['user']), 'Leha Bulankov')

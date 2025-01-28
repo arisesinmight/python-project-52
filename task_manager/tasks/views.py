@@ -1,5 +1,3 @@
-from django.views import View
-from django.shortcuts import render
 from task_manager.tasks.models import Task
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django_filters.views import FilterView
