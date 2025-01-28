@@ -2,6 +2,8 @@ from django.views import View
 from django.shortcuts import render
 from task_manager.tasks.models import Task
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
+from django_filters.views import FilterView
+from task_manager.tasks.filters import TaskFilter
 from task_manager.tasks.forms import TaskForm
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
@@ -10,10 +12,11 @@ from task_manager.mixins import LoginRequired
 from task_manager.tasks.mixins import CheckAuthorMixin
 
 
-class TasksIndexView(LoginRequired, View):
-    def get(self, request, *args, **kwargs):
-        tasks = Task.objects.all()
-        return render(request, 'tasks/tasks_index.html', context={'tasks': tasks})
+class TasksIndexView(LoginRequired, FilterView):
+    model = Task
+    context_object_name = 'tasks'
+    template_name = 'tasks/tasks_index.html'
+    filterset_class = TaskFilter
 
 
 class TaskView(LoginRequired, DetailView):

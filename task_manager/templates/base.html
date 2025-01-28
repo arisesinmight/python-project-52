@@ -57,7 +57,14 @@
 
     <footer>
       <div class="container my-5 pt-4 border-top">
-        <a target="_blank" href="https://t.me/arisesinmight">tg: @arisesinmight</a>
+        <div class="row">
+          <div class="col-10">
+            <a target="_blank" href="https://t.me/arisesinmight">tg: @arisesinmight</a>
+          </div>
+          <div class="col-2 text-secondary">
+            {% trans 'Logged in as' %}: {{ user.username }}
+          </div>
+        </div>
       </div>
     </footer>
   </body>

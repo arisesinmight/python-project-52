@@ -2,6 +2,7 @@
 
 {% block content %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% if messages %}
 {% for message in messages %}
@@ -16,6 +17,15 @@
   {% trans 'Create task' %}
 </a>
 <p></p>
+<div class="card mb-3">
+  <div class="card-body bg-light">
+    <form class="form-inline center" method="get">
+      {{ filter.form | crispy }}
+      <h1></h1>
+      <input class="btn btn-primary" type="submit" value="{% trans 'Show' %}">
+    </form>
+  </div>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
