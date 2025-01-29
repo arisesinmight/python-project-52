@@ -20,3 +20,6 @@ trans:
 
 comp:
 	uv run django-admin compilemessages
+test-coverage:
+	coverage run manage.py test task_manager
+	coverage report

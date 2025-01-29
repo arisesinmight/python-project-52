@@ -16,6 +16,8 @@ dependencies = [
     "django-filter>=24.3",
     "django-crispy-forms>=2.3",
     "rollbar>=1.1.2",
+    "coverage>=7.6.10",
+    "environs>=14.1.0",
 ]
 
 [dependency-groups]

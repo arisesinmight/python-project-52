@@ -1,0 +1,6 @@
+[run]
+source = .
+omit = ./venv/*, ./task_manager/tests/*, *apps.py, *manage.py, *__init__.py, ./task_manager/labels/migrations/*, ./task_manager/statuses/migrations/*, ./task_manager/tasks/migrations/*, ./task_manager/users/migrations/*,  *asgi*, *wsgi*, *admin.py, *urls.py
+
+[report]
+omit = ./venv/*, ./task_manager/tests/*, *apps.py, *manage.py, *__init__.py, ./task_manager/labels/migrations/*, ./task_manager/statuses/migrations/*, ./task_manager/tasks/migrations/*, ./task_manager/users/migrations/*, *asgi*, *wsgi*, *admin.py, *urls.py
