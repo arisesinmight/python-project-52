@@ -13,6 +13,7 @@ dependencies = [
     "uvicorn>=0.34.0",
     "whitenoise[brotli]>=6.8.2",
     "crispy-bootstrap5>=2024.10",
+    "django-extensions>=3.2.3",
     "django-filter>=24.3",
     "django-crispy-forms>=2.3",
     "rollbar>=1.1.2",
@@ -22,7 +23,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "django-extensions>=3.2.3",
     "ipython>=8.31.0",
     "python-dotenv>=1.0.1",
     "ruff>=0.8.6",
