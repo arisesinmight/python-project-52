@@ -211,7 +211,7 @@ msgstr "Удалить"
 
 #: task_manager/templates/registration/login.html:20
 msgid "Enter"
-msgstr "Вход"
+msgstr "Войти"
 
 #: task_manager/templates/statuses/status_create.html:7
 #: task_manager/templates/statuses/statuses_index.html:16
