@@ -1,7 +1,11 @@
 MANAGE := uv run python manage.py
-
+install:
+	uv sync
 shell:
 	@$(MANAGE) shell_plus --ipython
+
+build:
+	./build.sh
 
 run:
 	@$(MANAGE) runserver
