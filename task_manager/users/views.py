@@ -17,10 +17,11 @@ class IndexView(View):
         return render(request, 'users/users_index.html', context={'users': users})
 
 
-class UserCreateView(CreateView):
+class UserCreateView(SuccessMessageMixin, CreateView):
     form_class = UserCreateForm
     success_url = reverse_lazy('login')
     template_name = 'users/user_create.html'
+    success_message = _("You've successfully signed up")
 
 
 class UserUpdateView(LoginRequired, CheckUserMixin, SuccessMessageMixin, UpdateView):
@@ -33,11 +34,10 @@ class UserUpdateView(LoginRequired, CheckUserMixin, SuccessMessageMixin, UpdateV
     permission_denied_url = 'users_index'
 
 
-class UserDeleteView(LoginRequired, CheckUserMixin, SuccessMessageMixin, DeleteView):
+class UserDeleteView(LoginRequired, CheckUserMixin, DeleteView):
     model = User
     success_url = reverse_lazy('login')
     template_name = 'users/user_delete.html'
-    success_message = _("You've deleted your profile")
     permission_denied_message = _("You don't have access for deleting other users profile.")
     permission_denied_url = 'users_index'
 
@@ -46,4 +46,5 @@ class UserDeleteView(LoginRequired, CheckUserMixin, SuccessMessageMixin, DeleteV
         if self.object.got_tasks.exists() or self.object.created_tasks.exists():
             messages.warning(self.request, _("Unable to delete user that's in work."))
             return redirect('users_index')
+        messages.info(self.request, _("You've deleted your profile"))
         return self.delete(request, *args, **kwargs)
