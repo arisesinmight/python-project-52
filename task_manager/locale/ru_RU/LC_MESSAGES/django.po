@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-30 13:48+0300\n"
+"POT-Creation-Date: 2025-01-30 14:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,20 +74,23 @@ msgstr "Статус"
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/tasks/filters.py:19 task_manager/tasks/forms.py:27
-#: task_manager/templates/base.html:29
-#: task_manager/templates/labels/labels_index.html:13
-#: task_manager/templates/tasks/task_details.html:34
-msgid "Labels"
-msgstr "Метки"
+#: task_manager/tasks/filters.py:19
+msgid "Label"
+msgstr "Метка"
 
-#: task_manager/tasks/filters.py:24
+#: task_manager/tasks/filters.py:23
 msgid "Only your tasks"
 msgstr "Только свои задачи"
 
 #: task_manager/tasks/forms.py:15 task_manager/tasks/forms.py:16
 msgid "Description"
 msgstr "Описание"
+
+#: task_manager/tasks/forms.py:27 task_manager/templates/base.html:29
+#: task_manager/templates/labels/labels_index.html:13
+#: task_manager/templates/tasks/task_details.html:34
+msgid "Labels"
+msgstr "Метки"
 
 #: task_manager/tasks/views.py:30
 msgid "Task successfully created"

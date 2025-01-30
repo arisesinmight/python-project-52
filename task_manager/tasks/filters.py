@@ -16,7 +16,7 @@ class TaskFilter(django_filters.FilterSet):
         queryset=User.objects.filter(is_superuser=False),
     )
     labels = django_filters.ModelChoiceFilter(
-        label=_('Labels'),
+        label=_('Label'),
         queryset=Label.objects.all(),
     )
     only_users_tasks = django_filters.BooleanFilter(
