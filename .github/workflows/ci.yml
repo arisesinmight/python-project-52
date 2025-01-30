@@ -5,7 +5,7 @@ on:
   - pull_request
 
 env:
-  DJANGO_SECRET_KEY: 'secret'
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
 jobs:
   build:
