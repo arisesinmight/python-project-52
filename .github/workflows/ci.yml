@@ -19,12 +19,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+      - name: Install
         run: |
-          make install
-      - name: Apply db migrations
-        run: |
-          python manage.py migrate
+          make build
       - name: Run linter
         run: |
           ruff check .
