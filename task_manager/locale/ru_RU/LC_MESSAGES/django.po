@@ -322,10 +322,8 @@ msgid "Please enter your password again to confirm."
 msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
 #: task_manager/users/views.py:24
-#, fuzzy
-#| msgid "You are successfully updated your data"
 msgid "You've successfully signed up"
-msgstr "Вы успешно обновили свои данные"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:32
 msgid "You are successfully updated your data"
