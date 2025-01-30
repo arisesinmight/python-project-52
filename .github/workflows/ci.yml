@@ -32,4 +32,4 @@ jobs:
         with:
           coverageCommand: |
             uv run coverage run manage.py test task_manager
-            uv run coverage report
+            uv run coverage html
