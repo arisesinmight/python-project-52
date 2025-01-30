@@ -21,7 +21,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          make install
       - name: Apply db migrations
         run: |
           python manage.py migrate
