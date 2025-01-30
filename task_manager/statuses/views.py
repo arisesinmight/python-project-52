@@ -1,13 +1,14 @@
-from django.views import View
-from django.shortcuts import render, redirect
-from task_manager.statuses.models import Status
-from django.views.generic import CreateView, UpdateView, DeleteView
-from task_manager.statuses.forms import StatusForm
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
+from django.views import View
+from django.views.generic import CreateView, DeleteView, UpdateView
+
 from task_manager.mixins import LoginRequired
-from django.contrib import messages
+from task_manager.statuses.forms import StatusForm
+from task_manager.statuses.models import Status
 
 
 class StatusesIndexView(LoginRequired, View):

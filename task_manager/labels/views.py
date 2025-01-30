@@ -1,13 +1,14 @@
-from django.views import View
-from django.shortcuts import render, redirect
-from task_manager.labels.models import Label, Labeling
-from django.views.generic import CreateView, UpdateView, DeleteView
-from task_manager.labels.forms import LabelForm
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
+from django.views import View
+from django.views.generic import CreateView, DeleteView, UpdateView
+
+from task_manager.labels.forms import LabelForm
+from task_manager.labels.models import Label, Labeling
 from task_manager.mixins import LoginRequired
-from django.contrib import messages
 
 
 class LabelsIndexView(LoginRequired, View):

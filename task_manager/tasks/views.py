@@ -1,13 +1,14 @@
-from task_manager.tasks.models import Task
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
-from django_filters.views import FilterView
-from task_manager.tasks.filters import TaskFilter
-from task_manager.tasks.forms import TaskForm
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+from django_filters.views import FilterView
+
 from task_manager.mixins import LoginRequired
+from task_manager.tasks.filters import TaskFilter
+from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.mixins import CheckAuthorMixin
+from task_manager.tasks.models import Task
 
 
 class TasksIndexView(LoginRequired, FilterView):

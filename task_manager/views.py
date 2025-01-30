@@ -1,9 +1,8 @@
-from django.views.generic.base import TemplateView
-from django.contrib.auth.views import LogoutView, LoginView
-from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.utils.translation import gettext as _
+from django.views.generic.base import TemplateView
 
 
 class HelloView(TemplateView):

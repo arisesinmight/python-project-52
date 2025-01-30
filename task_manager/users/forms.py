@@ -1,8 +1,10 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from task_manager.users.models import User
 from django import forms
-from django.utils.translation import gettext as _
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.forms import ModelForm
+from django.utils.translation import gettext as _
+
+from task_manager.users.models import User
+
 
 class UserForm(ModelForm):
     first_name = forms.CharField(

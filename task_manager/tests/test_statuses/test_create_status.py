@@ -1,7 +1,8 @@
 from django.test import TestCase
+from django.urls import reverse
+
 from task_manager.statuses.models import Status
 from task_manager.users.models import User
-from django.urls import reverse
 
 
 class CreateStatusTest(TestCase):

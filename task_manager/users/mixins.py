@@ -1,6 +1,7 @@
-from django.shortcuts import redirect
-from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.shortcuts import redirect
+
 
 class CheckUserMixin(UserPassesTestMixin):
     def test_func(self):

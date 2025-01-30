@@ -1,14 +1,15 @@
-from django.shortcuts import render, redirect
-from django.views import View
-from django.views.generic import CreateView, UpdateView, DeleteView
-from task_manager.users.models import User
-from task_manager.users.forms import UserCreateForm, UserUpdateForm
-from django.urls import reverse_lazy
-from task_manager.users.mixins import CheckUserMixin
-from task_manager.mixins import LoginRequired
-from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
+from django.views import View
+from django.views.generic import CreateView, DeleteView, UpdateView
+
+from task_manager.mixins import LoginRequired
+from task_manager.users.forms import UserCreateForm, UserUpdateForm
+from task_manager.users.mixins import CheckUserMixin
+from task_manager.users.models import User
 
 
 class IndexView(View):
