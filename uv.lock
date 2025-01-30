@@ -311,6 +311,7 @@ dependencies = [
     { name = "django" },
     { name = "django-bootstrap5" },
     { name = "django-crispy-forms" },
+    { name = "django-extensions" },
     { name = "django-filter" },
     { name = "environs" },
     { name = "gunicorn" },
@@ -322,7 +323,6 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "django-extensions" },
     { name = "ipython" },
     { name = "python-dotenv" },
     { name = "ruff" },
@@ -336,6 +336,7 @@ requires-dist = [
     { name = "django", specifier = ">=5.1.4" },
     { name = "django-bootstrap5", specifier = ">=24.3" },
     { name = "django-crispy-forms", specifier = ">=2.3" },
+    { name = "django-extensions", specifier = ">=3.2.3" },
     { name = "django-filter", specifier = ">=24.3" },
     { name = "environs", specifier = ">=14.1.0" },
     { name = "gunicorn", specifier = ">=23.0.0" },
@@ -347,7 +348,6 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "django-extensions", specifier = ">=3.2.3" },
     { name = "ipython", specifier = ">=8.31.0" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "ruff", specifier = ">=0.8.6" },
