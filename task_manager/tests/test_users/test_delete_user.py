@@ -33,7 +33,6 @@ class DeleteUserTest(TestCase):
         self.assertEqual(resp.status_code, 302)
         self.assertRedirects(resp, '/users/')
 
-
     def test_logged_in_uses_correct_template(self):
         self.client.login(username='avavav', password='av13')
         resp = self.client.get(reverse('user_delete', kwargs={'pk': 1}))
