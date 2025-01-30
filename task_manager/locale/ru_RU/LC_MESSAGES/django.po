@@ -327,7 +327,7 @@ msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:32
 msgid "You are successfully updated your data"
-msgstr "Вы успешно обновили свои данные"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:33
 msgid "You don't have access for editing other users profile."
@@ -335,7 +335,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/users/views.py:41
 msgid "You don't have access for deleting other users profile."
-msgstr "У вас нет прав для удаления другого пользователя."
+msgstr "У вас нет прав для изменения другого пользователя."
 
 #: task_manager/users/views.py:47
 msgid "Unable to delete user that's in work."
