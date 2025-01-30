@@ -17,6 +17,7 @@ environs==14.1.0
 executing==2.1.0
 gunicorn==23.0.0
 h11==0.14.0
+-e file:///home/arisesinmight/Hexlet/python-project-52
 idna==3.10
 ipython==8.31.0
 jedi==0.19.2
@@ -39,6 +40,7 @@ stack-data==0.6.3
 traitlets==5.14.3
 typing-extensions==4.12.2
 urllib3==2.3.0
+uv==0.5.25
 uvicorn==0.34.0
 wcwidth==0.2.13
 whitenoise==6.8.2

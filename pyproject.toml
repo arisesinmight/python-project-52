@@ -19,6 +19,7 @@ dependencies = [
     "rollbar>=1.1.2",
     "coverage>=7.6.10",
     "environs>=14.1.0",
+    "uv>=0.5.25",
 ]
 
 [dependency-groups]

@@ -31,5 +31,5 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: |
-            coverage run manage.py test task_manager
-            coverage report
+            uv run coverage run manage.py test task_manager
+            uv run coverage report
