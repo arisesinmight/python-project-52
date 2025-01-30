@@ -36,7 +36,7 @@ class UserUpdateView(LoginRequired, CheckUserMixin, SuccessMessageMixin, UpdateV
 
 class UserDeleteView(LoginRequired, CheckUserMixin, DeleteView):
     model = User
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('users_index')
     template_name = 'users/user_delete.html'
     permission_denied_message = _("You don't have access for deleting other users profile.")
     permission_denied_url = 'users_index'
