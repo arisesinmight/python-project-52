@@ -33,7 +33,7 @@ class CreateTaskTest(TestCase):
     def test_create_task(self):
         self.client.login(username='avavav', password='av13')
         self.client.post(
-            reverse('task_create'),{
+            reverse('task_create'), {
                 'name': '111',
                 'description': '111',
                 'status': 1,

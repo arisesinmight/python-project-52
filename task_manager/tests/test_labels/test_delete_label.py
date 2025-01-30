@@ -33,7 +33,6 @@ class DeleteLabelTest(TestCase):
         test_task.labels.add(test_label)
         test_task.save()
 
-
     def test_redirect_if_not_logged_in(self):
         resp = self.client.get(reverse('label_delete', kwargs={'pk': 1}))
         self.assertRedirects(resp, '/login/')
@@ -53,7 +52,6 @@ class DeleteLabelTest(TestCase):
 
         self.assertEqual(resp.status_code, 302)
         self.assertTrue(Label.objects.filter(pk=1))
-
 
     def test_label_deleted(self):
         self.client.login(username='avavav', password='av13')

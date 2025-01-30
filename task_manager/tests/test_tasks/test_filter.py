@@ -44,35 +44,32 @@ class FilterTest(TestCase):
         )
         test_task_anothers.save()
 
-
     def test_own_tasks(self):
         self.client.login(username='avavav', password='av13')
         resp = self.client.get(
-            reverse('tasks_index'),{
+            reverse('tasks_index'), {
                 'status': 1,
                 'only_users_tasks': True
             }
         )
         filtered_list = resp.context['tasks']
-        user_ones_tasks =  User.objects.get(id=1).created_tasks.all()
+        user_ones_tasks = User.objects.get(id=1).created_tasks.all()
 
         self.assertEqual(list(user_ones_tasks), list(filtered_list))
-
 
     def test_anothers_tasks(self):
         self.client.login(username='avavav', password='av13')
         resp = self.client.get(
-            reverse('tasks_index'),{
+            reverse('tasks_index'), {
                 'status': 1,
                 'executor': 2,
                 'only_users_tasks': True
             }
         )
         filtered_list = resp.context['tasks']
-        user_anothers_tasks =  User.objects.get(id=2).created_tasks.all()
+        user_anothers_tasks = User.objects.get(id=2).created_tasks.all()
 
         self.assertNotEqual(list(user_anothers_tasks), list(filtered_list))
-
 
     def test_on_common(self):
         self.client.login(username='avavav', password='av13')

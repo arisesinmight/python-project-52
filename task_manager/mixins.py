@@ -10,7 +10,9 @@ class LoginRequired(LoginRequiredMixin):
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
-            messages.add_message(request, messages.INFO, self.permission_denied_message)
+            messages.add_message(
+                request, messages.INFO, self.permission_denied_message
+            )
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
 

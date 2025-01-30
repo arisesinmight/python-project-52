@@ -15,7 +15,8 @@ class CheckAuthorMixin(UserPassesTestMixin):
         user_test_result = self.get_test_func()()
         if not user_test_result:
             return redirect(self.permission_denied_url)
-        return super(UserPassesTestMixin, self).dispatch(request, *args, **kwargs)
+        return (super(UserPassesTestMixin, self).
+                dispatch(request, *args, **kwargs))
 
 
 

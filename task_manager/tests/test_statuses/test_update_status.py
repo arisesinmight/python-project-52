@@ -18,8 +18,6 @@ class UpdateStatusTest(TestCase):
             password='av13')
         test_user.save()
 
-
-
     def test_redirect_if_not_logged_in(self):
         resp = self.client.get(reverse('status_update', kwargs={'pk': 1}))
         self.assertRedirects(resp, '/login/')
@@ -40,10 +38,3 @@ class UpdateStatusTest(TestCase):
         new_data = test_status.name
 
         self.assertEqual(new_data, 'пидор')
-
-
-
-
-
-
-

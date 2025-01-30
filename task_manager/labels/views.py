@@ -14,7 +14,11 @@ from task_manager.mixins import LoginRequired
 class LabelsIndexView(LoginRequired, View):
     def get(self, request, *args, **kwargs):
         labels = Label.objects.all()
-        return render(request, 'labels/labels_index.html', context={'labels': labels})
+        return render(
+            request,
+            'labels/labels_index.html',
+            context={'labels': labels}
+        )
 
 
 class LabelCreateView(LoginRequired, SuccessMessageMixin, CreateView):

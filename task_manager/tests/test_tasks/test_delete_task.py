@@ -45,7 +45,3 @@ class DeleteTaskTest(TestCase):
         self.client.post(reverse('task_delete', kwargs={'pk': 1}))
 
         self.assertFalse(Task.objects.filter(pk=1))
-
-
-
-

@@ -14,7 +14,11 @@ from task_manager.statuses.models import Status
 class StatusesIndexView(LoginRequired, View):
     def get(self, request, *args, **kwargs):
         statuses = Status.objects.all()
-        return render(request, 'statuses/statuses_index.html', context={'statuses': statuses})
+        return render(
+            request,
+            'statuses/statuses_index.html',
+            context={'statuses': statuses}
+        )
 
 
 class StatusCreateView(LoginRequired, SuccessMessageMixin, CreateView):
@@ -40,7 +44,9 @@ class StatusDeleteView(LoginRequired, DeleteView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.on_task.exists():
-            messages.warning(self.request, _("Unable to delete status that's in use."))
+            messages.warning(
+                self.request, _("Unable to delete status that's in use.")
+            )
             return redirect('statuses_index')
         messages.success(self.request, _('Status successfully removed'))
         return self.delete(request, *args, **kwargs)

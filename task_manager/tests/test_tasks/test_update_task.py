@@ -28,8 +28,6 @@ class UpdateTaskTest(TestCase):
         )
         test_task.save()
 
-
-
     def test_redirect_if_not_logged_in(self):
         resp = self.client.get(reverse('task_update', kwargs={'pk': 1}))
         self.assertRedirects(resp, '/login/')

@@ -44,10 +44,14 @@ class TaskUpdateView(LoginRequired, SuccessMessageMixin, UpdateView):
     success_message = _('Task successfully updated')
 
 
-class TaskDeleteView(LoginRequired, CheckAuthorMixin, SuccessMessageMixin, DeleteView):
+class TaskDeleteView(
+    LoginRequired, CheckAuthorMixin, SuccessMessageMixin, DeleteView
+):
     model = Task
     success_url = reverse_lazy('tasks_index')
     template_name = 'tasks/task_delete.html'
     success_message = _('Task successfully removed')
-    permission_denied_message = _("You don't have access for deleting other authors task.")
+    permission_denied_message = _(
+        "You don't have access for deleting other authors task."
+    )
     permission_denied_url = 'tasks_index'

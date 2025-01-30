@@ -10,5 +10,8 @@ class Label(models.Model):
 
 
 class Labeling(models.Model):
-    task = models.ForeignKey('tasks.Task', on_delete=models.SET_NULL, blank=True, null=True)
+    task = models.ForeignKey(
+        'tasks.Task',
+        on_delete=models.SET_NULL, blank=True, null=True
+    )
     label = models.ForeignKey(Label, on_delete=models.PROTECT)

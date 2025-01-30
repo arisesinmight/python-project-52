@@ -19,7 +19,8 @@ class UserForm(ModelForm):
         label=_('Username'),
         widget=forms.TextInput(attrs={'placeholder': _('Username')}),
         help_text=_(
-            'Required field. No more than 150 characters. Only letters, numbers and symbols @/./+/-/_.'
+            'Required field. No more than 150 characters. Only letters,\
+             numbers and symbols @/./+/-/_.'
         )
     )
     password1 = forms.CharField(
@@ -37,10 +38,12 @@ class UserForm(ModelForm):
         )
     )
 
+
 class UserCreateForm(UserForm, UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username']
+
 
 class UserUpdateForm(UserForm, UserChangeForm):
     password = None

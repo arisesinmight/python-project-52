@@ -9,7 +9,6 @@ class HelloView(TemplateView):
     template_name = 'greetings.html'
 
 
-
 class TMLogoutView(SuccessMessageMixin, LogoutView):
     def dispatch(self, request, *args, **kwargs):
         messages.info(request, _("You are logged out"))
