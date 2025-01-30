@@ -1,10 +1,26 @@
 import django_filters
 from django import forms
+from django.utils.translation import gettext as _
 from task_manager.tasks.models import Task
+from task_manager.labels.models import Label
+from task_manager.statuses.models import Status
+from task_manager.users.models import User
 
 class TaskFilter(django_filters.FilterSet):
+    status = django_filters.ModelChoiceFilter(
+        label=_('Status'),
+        queryset=Status.objects.all(),
+    )
+    executor = django_filters.ModelChoiceFilter(
+        label=_('Executor'),
+        queryset=User.objects.filter(is_superuser=False),
+    )
+    labels = django_filters.ModelChoiceFilter(
+        label=_('Labels'),
+        queryset=Label.objects.all(),
+    )
     only_users_tasks = django_filters.BooleanFilter(
-        label='Only your tasks',
+        label=_('Only your tasks'),
         method='is_users_task',
         widget=forms.CheckboxInput
     )

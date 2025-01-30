@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-30 09:36+0300\n"
+"POT-Creation-Date: 2025-01-30 13:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,27 +62,32 @@ msgstr "Невозможно удалить статус, потому что о
 msgid "Status successfully removed"
 msgstr "Статус успешно удален"
 
-#: task_manager/tasks/forms.py:15 task_manager/tasks/forms.py:16
-msgid "Description"
-msgstr "Описание"
-
-#: task_manager/tasks/forms.py:19
+#: task_manager/tasks/filters.py:11 task_manager/tasks/forms.py:19
 #: task_manager/templates/tasks/task_details.html:25
 #: task_manager/templates/tasks/tasks_index.html:34
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/tasks/forms.py:23
+#: task_manager/tasks/filters.py:15 task_manager/tasks/forms.py:23
 #: task_manager/templates/tasks/task_details.html:21
 #: task_manager/templates/tasks/tasks_index.html:36
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/tasks/forms.py:27 task_manager/templates/base.html:29
+#: task_manager/tasks/filters.py:19 task_manager/tasks/forms.py:27
+#: task_manager/templates/base.html:29
 #: task_manager/templates/labels/labels_index.html:13
 #: task_manager/templates/tasks/task_details.html:34
 msgid "Labels"
 msgstr "Метки"
+
+#: task_manager/tasks/filters.py:24
+msgid "Only your tasks"
+msgstr "Только свои задачи"
+
+#: task_manager/tasks/forms.py:15 task_manager/tasks/forms.py:16
+msgid "Description"
+msgstr "Описание"
 
 #: task_manager/tasks/views.py:30
 msgid "Task successfully created"
@@ -196,7 +201,7 @@ msgstr "Дата создания"
 #: task_manager/templates/labels/labels_index.html:35
 #: task_manager/templates/statuses/statuses_index.html:35
 #: task_manager/templates/tasks/task_details.html:44
-#: task_manager/templates/tasks/tasks_index.html:51
+#: task_manager/templates/tasks/tasks_index.html:53
 #: task_manager/templates/users/users_index.html:34
 msgid "Update"
 msgstr "Изменить"
@@ -204,7 +209,7 @@ msgstr "Изменить"
 #: task_manager/templates/labels/labels_index.html:37
 #: task_manager/templates/statuses/statuses_index.html:37
 #: task_manager/templates/tasks/task_details.html:46
-#: task_manager/templates/tasks/tasks_index.html:53
+#: task_manager/templates/tasks/tasks_index.html:55
 #: task_manager/templates/users/users_index.html:36
 msgid "Delete"
 msgstr "Удалить"
