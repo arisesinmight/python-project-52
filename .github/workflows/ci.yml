@@ -19,9 +19,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install
+      - name: Install requirements
         run: |
-          make build
+          uv sync
+      - name: Apply migrations
+        run: |
+          uv run python manage.py migrate
       - name: Run linter
         run: |
           ruff check .
