@@ -30,7 +30,7 @@ jobs:
           uv run python manage.py migrate
       - name: Run linter
         run: |
-          ruff check .
+          uv run ruff check .
       - name: Run tests & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.4
         env:
