@@ -40,5 +40,4 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: codeclimate-test-reporter
-          coverageLocations: ${{ github.workspace }}/coverage.xml:coverage.py
+          coverageCommand: uv run coverage xml -o coverage.xml
