@@ -34,11 +34,11 @@ jobs:
       - name: Run tests and coverage
         run: |
           uv run coverage run manage.py test task_manager
-          uv run coverage report
-      - name: Run tests & publish code coverage
+          uv run coverage xml -o coverage.xml
+      - name: Upload coverage to CodeClimate
         uses: paambaati/codeclimate-action@v2.7.4
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: |
-            uv run coverage report
+          coverageCommand: codeclimate-test-reporter
+          coverageLocations: ${{ github.workspace }}/coverage.xml:coverage.py

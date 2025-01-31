@@ -114,6 +114,16 @@ wheels = [
 ]
 
 [[package]]
+name = "codeclimate-test-reporter"
+version = "0.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "coverage" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3b/d1/6b7148f04b215240c69561daa136ffb070581605301300d1432198594d26/codeclimate-test-reporter-0.2.3.tar.gz", hash = "sha256:d4a5962323e0ebf7d0e9959bcb605910dbb937ff93b21035421b7967dc242865", size = 6795 }
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -305,6 +315,7 @@ name = "hexlet-code"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "codeclimate-test-reporter" },
     { name = "coverage" },
     { name = "crispy-bootstrap5" },
     { name = "dj-database-url" },
@@ -330,6 +341,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "codeclimate-test-reporter", specifier = ">=0.2.3" },
     { name = "coverage", specifier = ">=7.6.10" },
     { name = "crispy-bootstrap5", specifier = ">=2024.10" },
     { name = "dj-database-url", specifier = ">=2.3.0" },
