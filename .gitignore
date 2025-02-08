@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 htmlcov/
+db.sqlite3
 
 # Virtual environments
 .venv
